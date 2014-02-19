@@ -1,0 +1,147 @@
+<div id="mainContentWrapper">
+            
+    <div class="row">
+  <div class="large-12 column">
+    <h1>Checkout</h1>
+    <ul id="orderOverview" class="nolist">
+      <li class="productline headline">
+        <div class="productlineTable">
+          <div class="productlineQuantity productlineColumn">
+										Antal
+									</div>
+          <div class="productlineSKU productlineColumn">
+										Nummer										
+									</div>
+          <div class="productlineName productlineColumn">
+										Navn										
+									</div>
+          <div class="productlinePrice productlineColumn">
+										Pris										
+									</div>
+          <div class="productlineDiscount productlineColumn">
+                    Rabat
+                  </div>
+          <div class="productlinePriceTotal productlineColumn">
+										Total										
+									</div>
+          <div class="productlineDelete productlineColumn">
+                    Slet
+									</div>
+        </div>
+      </li>
+      <li class="productline" data-productid="2123" data-courseid="2186">
+        <div class="productlineTable">
+          <div class="productlineQuantity productlineColumn"><input type="text" class="productlineQuantityField" maxlength="3" value="1"></div>
+          <div class="productlineSKU productlineColumn">149-338</div>
+          <div class="productlineName productlineColumn"><span class="productName">SAMTALEFABRIKKEN: DANNELSE</span><span class="productNote"></span></div>
+          <div class="productlinePrice productlineColumn">100 DKK</div>
+          <div class="productlineDiscount productlineColumn">0 DKK</div>
+          <div class="productlinePriceTotal productlineColumn">100 DKK</div>
+          <div class="productlineDelete productlineColumn"><a class="deleteProductline" href="javascript:void(0)">X</a></div>
+        </div>
+      </li>
+      <li class="productline totalPrice">
+        <div class="productlineTable">
+          <div class="productlistTotalPriceLabel productlineColumn">
+										Total pris:
+									</div>
+          <div class="productlinePriceTotal productlineColumn" id="totalPriceSum">100 DKK</div>
+        </div>
+      </li>
+      <li class="productline totalSubTotalPrice" style="display:none;">
+        <div class="productlineTable">
+          <div class="productlistTotalPriceLabel productlineColumn">
+										Heraf moms:
+									</div>
+          <div class="productlinePriceTotal productlineColumn" id="totalPriceVATSum">0 DKK</div>
+        </div>
+      </li>
+      <li class="productline totalSubTotalPrice">
+        <div class="productlineTable">
+          <div class="productlistTotalPriceLabel productlineColumn">
+                    Total rabat:
+                  </div>
+          <div class="productlinePriceTotal productlineColumn" id="totalPriceDiscount">0 DKK</div>
+        </div>
+      </li>
+    </ul>
+    <div><a type="button" class="button secondary" href="/program.aspx">Shop videre</a></div>
+    <div><input type="checkbox" name="student" id="student"><label for="student" class="checkboxLabel">Jeg er studerende</label></div>
+  </div>
+</div>
+<div class="row spacer withBorder">
+  <form action="/MainPayment" id="checkoutForm" method="post">
+    <div class="large-12 columns">
+      <h2>Personoplysninger</h2>
+    </div>
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="columns large-6">
+          <div class="inputWrapper"><label for="contactName">Fornavn*</label><input class="required" data-required="Fornavn skal udfyldes" data-error="Fornavn er ikke udfyldt korrekt" type="text" name="contactName" id="contactName" value=""></div>
+        </div>
+        <div class="columns large-6">
+          <div class="inputWrapper"><label for="contactLastname">Efternavn*</label><input class="required" data-required="Efternavn skal udfyldes" data-error="Efternavn er ikke udfyldt korrekt" type="text" name="contactLastname" id="contactLastname" value=""></div>
+        </div>
+      </div>
+      <div class="inputWrapper"><label for="contactEmail">E-mail*</label><input class=" required email" data-required="E-mail skal udfyldes" data-requiredemail="E-mail ikke korrekt format" type="text" name="contactEmail" id="contactEmail" value=""></div>
+      <div class="inputWrapper"><label for="contactMobile">Mobil*</label><input class=" required number" data-required="Mobil skal udfyldes" data-error="Mobil er ikke udfyldt korrekt" data-requirednumber="Mobil er felt kan kun indeholde tal" type="text" name="contactMobile" id="contactMobile" value=""></div>
+      <div class="row">
+        <div class="large-9 columns">
+          <div class="inputWrapper"><label for="contactStreetname">Vejnavn*</label><input class="required" data-required="Vejnavn skal udfyldes" data-error="Vejnavn er ikke udfyldt korrekt" type="text" name="contactStreetname" id="contactStreetname" value=""></div>
+        </div>
+        <div class="large-3 columns">
+          <div class="inputWrapper"><label for="contactHouseNumber">Husnr.*</label><input autocomplete="off" class=" required" data-error="Husnummer er ikke udfyldt korrekt" data-required="Husnr. skal udfyldes" type="text" name="contactHouseNumber" id="contactHouseNumber" value=""></div>
+        </div>
+        <div class="large-3 columns">
+          <div class="inputWrapper"><label for="contactHouseNumberFloor">Etage (1,2,st)</label><input autocomplete="off" data-error="Etage er ikke udfyldt korrekt" data-required="" type="text" name="contactHouseNumberFloor" id="contactHouseNumberFloor" value=""></div>
+        </div>
+        <div class="large-3 columns">
+          <div class="inputWrapper"><label for="contactLocation">Placering</label><select id="contactLocation"><option value="-1"></option>
+              <option value="TV">TV</option>
+              <option value="MF">MF</option>
+              <option value="TH">TH</option></select></div>
+        </div>
+        <div class="large-3 columns left">
+          <div class="inputWrapper"><label for="contactRoomNumber">Lejlighedsnr./værelsesnr</label><input autocomplete="off" class="" type="text" name="contactRoomNumber" id="contactRoomNumber" value=""></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="columns large-3">
+          <div class="inputWrapper"><label for="contactPostalCode">Postnr.*</label><input class=" required number" data-error="Postnr. er ikke udfyldt korrekt" data-required="Postnr. skal udfyldes" type="text" name="contactPostalCode" id="contactPostalCode" value=""></div>
+        </div>
+        <div class="columns large-9">
+          <div class="inputWrapper"><label for="contactCity">By*</label><input class=" required" data-error="By er ikke udfyldt korrekt" data-required="By skal udfyldes" type="text" name="contactCity" id="contactCity" value=""></div>
+        </div>
+        <div class="clear:both"></div>
+        <div id="studentInfoWrapper" class="hide">
+          <div class="large-6 columns">
+            <div class="inputWrapper"><label for="educationPlace">Uddannelsessted*</label><input data-required="Uddannelsessted skal udfyldes" data-error="Uddannelsessted er ikke udfyldt korrekt" type="text" name="educationPlace" id="educationPlace" value=""></div>
+          </div>
+          <div class="large-6 columns">
+            <div class="inputWrapper"><label for="educationCardNumber">Årskortnr.*</label><input data-required="Årskortnummer skal udfyldes" data-error="Årskortnummer er ikke udfyldt korrekt" type="text" name="educationCardNumber" id="educationCardNumber" value=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-5 large-offset-1 columns">
+      <div id="checkoutPurchaseInfo">
+        <h3>Betaling</h3>
+        <p>Efter du har trykket "Gå til betaling" er din billet reserveret i 10 minutter. Det betyder, at du har 10 minutter til at gennemføre betalingen, før billetten kan købes af andre.</p>
+        <h3>Kvittering og billet</h3>
+        <p>Efter endt betaling vil du modtage en e-mail med kvittering og billet. Udskriv billetten og medbring den til arrangementet.</p>
+        <h3>Afmelding</h3>
+        <p>Fortryder du din tilmelding til et arrangement, kan du afmelde dig og få pengene tilbage fratrukket et ekspeditionsgebyr på 120 kr. Du skal senest afmelde dig 14 dage før arrangementet. Ved senere afmelding - uanset grunden - refunderes billetten ikke. </p>
+        <div class="inputWrapper checkbox"><input type="checkbox" data-required="Du skal have læst og accepteret Folkeuniversitetets salgs- og leveringsbetingelser for at gennemføre købet." name="termsOfSale" id="termsOfSale" class="required"><label for="termsOfSale" class="checkboxLabel">Jeg accepterer Folkeuniversitetets salgs- og leveringsbetingelser</label></div>
+      </div>
+    </div>
+    <div class="columns large-12">
+      <div id="completePurchaseWrapper">
+        <div class="inputWrapper submitBtnWrapper"><input type="submit" id="goToPayment" class="button" value="Gå til betaling - 100 DKK"></div>
+      </div>
+    </div>
+  </form>
+</div><script charset="UTF-8" src="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js" type="text/javascript"></script>
+    <div id="dibsFormHolder"></div>
+
+
+        </div>
