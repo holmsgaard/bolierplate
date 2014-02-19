@@ -1,0 +1,17 @@
+/* Orderlist */
+.order-list-header,
+.order-list-item,
+.order-list-footer,
+.order-list-footer-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.order-list-header {
+    
+    font-weight: 700;
+}
+
+.order-list-item {
+    border-top: 1px solid #efefef;
+}
